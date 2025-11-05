@@ -1,4 +1,4 @@
-# Sistemas de Big Data
+# Big Data
 
 - [Big Data aplicado](./Big%20data%20aplicado/index.md)
 
