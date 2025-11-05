@@ -1,0 +1,55 @@
+services:
+  apache-php:
+    #image: php:8.2-apache
+    image: elki97413/pdo_mysql-php-apache:latest
+    container_name: apache_php
+    restart: always
+    volumes:
+      - ./www:/var/www/html   # Tu código PHP en ./www
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+    networks:
+      - shared-network
+      - internal-network
+
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: alumno
+      MYSQL_PASSWORD: alumnopass
+    # ports:
+    #   - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - internal-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin_app
+    restart: always
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: rootpass
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - internal-network
+
+volumes:
+  db_data:
+
+networks:
+  shared-network:
+    external: true
+  internal-network:
+    driver: bridge
