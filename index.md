@@ -1,5 +1,5 @@
 # Big Data
 
-- [Big Data aplicado](./Big%20data%20aplicado/index.md)
+- [Big Data aplicado](./Big_data_aplicado/)
 
-- [Sistemas de Big Data](./Sistemas%20de%20Big%20data/index.md)
+- [Sistemas de Big Data](./Sistemas_de_Big_data/)
