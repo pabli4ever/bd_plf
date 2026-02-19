@@ -1,0 +1,183 @@
+---
+permalink: /404.html
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>404 - Sector Purgado</title>
+    <style>
+        /* CONFIGURACIÓN DEL COGNOTADOR */
+        body {
+            background-color: #020502; /* Negro abisal */
+            color: #33ff33; /* Verde fósforo */
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            text-transform: uppercase;
+        }
+
+        /* EFECTO CRT Y ESCANEADO */
+        body::before {
+            content: " ";
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 10;
+            background-size: 100% 3px, 3px 100%;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: " ";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 5px;
+            background: rgba(51, 255, 51, 0.15);
+            opacity: 0.7;
+            z-index: 11;
+            animation: scanline 3s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes scanline {
+            0% { top: -5%; }
+            100% { top: 100%; }
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .container {
+            max-width: 800px;
+            z-index: 1;
+            border: 1px solid #33ff33;
+            padding: 30px;
+            background: rgba(0, 20, 0, 0.8);
+            box-shadow: 0 0 15px rgba(51, 255, 51, 0.2);
+        }
+
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            margin-top: 0;
+            text-shadow: 0 0 10px #33ff33;
+            border-bottom: 2px solid #33ff33;
+            padding-bottom: 10px;
+        }
+
+        .status-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .status-table td {
+            border: 1px solid #33ff33;
+            padding: 10px;
+        }
+
+        .highlight {
+            background-color: #33ff33;
+            color: #000;
+            font-weight: bold;
+            padding: 2px 5px;
+        }
+
+        /* ESTILO HOLOGRAMA PARA IMÁGENES */
+        .hologram-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .hologram-group img {
+            width: 250px;
+            /* Filtro para que parezcan hologramas verdes */
+            filter: sepia(100%) hue-rotate(70deg) brightness(1) contrast(1.2);
+            opacity: 0.8;
+            border: 1px solid rgba(51, 255, 51, 0.5);
+            animation: flicker 2s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 0.7; }
+            5% { opacity: 0.4; }
+            10% { opacity: 0.8; }
+            100% { opacity: 0.9; }
+        }
+
+        /* BOTÓN DE REINICIO */
+        .btn {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            padding: 15px 30px;
+            border: 2px solid #33ff33;
+            color: #33ff33;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: #33ff33;
+            color: #000;
+            box-shadow: 0 0 25px #33ff33;
+            cursor: pointer;
+        }
+
+        blockquote {
+            border-left: 4px solid #33ff33;
+            padding-left: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            color: rgba(51, 255, 51, 0.7);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>⚠️ ERROR_DE_SISTEMA // 404</h1>
+
+    <p align="center">
+        <img src="https://i.redd.it/sj68mm9zs3sb1.gif" width="120" style="filter: brightness(1.5) grayscale(1) invert(1) hue-rotate(90deg);">
+    </p>
+
+    <blockquote>
+        "La **Red Neural del Adeptus Mechanicus** ha sido incapaz de localizar el paquete de datos solicitado. Es posible que el archivo haya sido purgado por la **Inquisición**, devorado por los horrores de la **Disformidad** o que simplemente tus coordenadas de salto sean erróneas."
+    </blockquote>
+
+    <table class="status-table">
+        <tr>
+            <td><span class="highlight">ESTADO</span></td>
+            <td>DATA_NOT_FOUND</td>
+        </tr>
+        <tr>
+            <td><span class="highlight">ERROR</span></td>
+            <td>0x000404 // HERESY_DETECTED</td>
+        </tr>
+        <tr>
+            <td><span class="highlight">SISTEMA</span></td>
+            <td>PROTOCOLO MECÁNICUS FALLIDO</td>
+        </tr>
+    </table>
+
+    <div class="hologram-group">
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyb2JwcDI1dGJpY21nMHI2YTdlenNmOGJlcXMxODBnbzUydXhoZXpjciZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/Lp0wjj3Vxmh5lLmGgB/200.gif" alt="marine-walking">
+        <img src="https://art.ngfiles.com/images/1885000/1885275_gibusimp_space-marine-shooting-phase.gif?f1623633587" alt="marine-shooting">
+    </div>
+
+    <p align="center">LA RED NEURONAL NO RESPONDE. RECOMENDADA RETIRADA ESTRATÉGICA.</p>
+
+    <a href="https://pabli4ever.github.io/bd_plf/" class="btn">[ 🛰️ REINICIAR CONEXIÓN CON EL MUNDO TRONCAL ]</a>
+</div>
+
+</body>
+</html>
+
